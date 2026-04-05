@@ -10,6 +10,12 @@
         <module>spring-ioc</module>
         <module>spring-web</module>
         <module>jdk-core</module>
+        <module>spring-annotation</module>
+        <module>truism-log</module>
+        <module>leetcodeed</module>
+        <module>spring-aop</module>
+        <module>best-practice</module>
+        <module>readnotes</module>
     </modules>
 
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="60">
+    <Properties>
+        <Property name="LOG_DIR">logs</Property>
+        <Property name="PATTERN">%d{ISO8601} %-5p [%t] %c{36} - %msg %X{traceId}%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console">
+            <PatternLayout pattern="${PATTERN}"/>
+        </Console>
+
+        <RollingFile name="JsonFile"
+                     fileName="${LOG_DIR}/app.log"
+                     filePattern="${LOG_DIR}/app-%d{yyyy-MM-dd}-%i.log.gz">
+            <!-- 使用 JSONLayout (layout-template-json 更灵活，MVP 可简单先用 JSONLayout) -->
+            <JSONLayout complete="false" compact="true" eventEol="true" stacktraceAsString="true">
+                <KeyValuePair key="service" value="${ctx:service}"/>
+                <KeyValuePair key="env" value="${ctx:env}"/>
+                <KeyValuePair key="region" value="${ctx:region}"/>
+                <KeyValuePair key="traceId" value="${ctx:traceId}"/>
+            </JSONLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="200 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <AsyncLogger name="com.acme" level="INFO" additivity="false">
+            <AppenderRef ref="JsonFile"/>
+            <AppenderRef ref="Console"/>
+        </AsyncLogger>
+        <Root level="WARN">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
