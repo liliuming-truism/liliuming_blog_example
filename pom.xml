@@ -16,6 +16,7 @@
         <module>spring-aop</module>
         <module>best-practice</module>
         <module>readnotes</module>
+        <module>rpc-netty</module>
     </modules>
 
 

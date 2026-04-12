@@ -4,7 +4,14 @@
       "Bash(for dir:*)",
       "Bash(do echo:*)",
       "Read(//e/projects/liliuming_blog/$dir/**)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(mkdir -p \"E:/projects/liliuming_blog/rpc-netty/src/main/java/top/truism/blog/rpc\")",
+      "Bash(mkdir -p \"E:/projects/liliuming_blog/rpc-netty/src/test/java/top/truism/blog/rpc\")",
+      "Bash(mvn -pl rpc-netty clean package -q)",
+      "Bash(mvn -pl rpc-netty clean package)",
+      "Bash(mvn -pl rpc-netty clean compile)",
+      "Bash(mvn -pl rpc-netty test)",
+      "Bash(mvn -pl rpc-netty compile)"
     ]
   }
 }
