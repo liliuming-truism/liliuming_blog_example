@@ -66,6 +66,13 @@ public class ServiceRegistry {
         return impl;
     }
 
+    /**
+     * 返回所有已注册的键（供 ZK 发布时遍历）
+     */
+    public java.util.Set<String> getRegisteredNames() {
+        return java.util.Collections.unmodifiableSet(services.keySet());
+    }
+
     private static String buildKey(String interfaceName, String version) {
         return (version == null || version.isEmpty()) ? interfaceName : interfaceName + ":" + version;
     }

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: demo-dev-services
+
+  docker:
+    compose:
+      enabled: true
+      file: ${user.dir}/spring-boot/src/main/resources/compose.yaml
+      lifecycle-management: start-and-stop
+      readiness:
+        wait: always
+
+  sql:
+    init:
+      mode: always
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: demo-producer-group
+
+server:
+  port: 8080

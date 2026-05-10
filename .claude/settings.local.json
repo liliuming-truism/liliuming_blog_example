@@ -11,7 +11,11 @@
       "Bash(mvn -pl rpc-netty clean package)",
       "Bash(mvn -pl rpc-netty clean compile)",
       "Bash(mvn -pl rpc-netty test)",
-      "Bash(mvn -pl rpc-netty compile)"
+      "Bash(mvn -pl rpc-netty compile)",
+      "Read(//mnt/e/projects/**)",
+      "Bash(mvn -pl rpc-netty clean compile -q)",
+      "Bash(mvn -pl truism-redis-client clean compile)",
+      "Bash(mvn -pl truism-redis-client compile)"
     ]
   }
 }

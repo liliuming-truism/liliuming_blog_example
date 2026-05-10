@@ -49,6 +49,38 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
+        <!-- ZooKeeper 注册中心（Curator Framework，版本由 Spring Boot BOM 管理） -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+        </dependency>
+
+        <!--
+            Nacos 注册中心：如需启用 NacosRegistryCenter，取消以下注释并补全实现。
+            nacos-client 2.x 传递依赖 gRPC（shaded）和 protobuf，建议按需引入。
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>2.5.1</version>
+            </dependency>
+        -->
+
+        <!-- Curator（ZooKeeper 客户端，5.x 对应 ZK 3.6+） -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>5.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>5.7.0</version>
+        </dependency>
+
         <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
